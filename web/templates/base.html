@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+  <!-- LINKS TO CSS FILES -->
+  
+ <link rel="stylesheet" href="{{url_for('static', filename='styles/variables.css')}}">
+ <link rel="stylesheet" href="{{url_for('static', filename='styles/general.css')}}">
+ <link rel="stylesheet" href="{{url_for('static', filename='styles/header.css')}}">
+  <link rel="stylesheet" href="{{url_for('static', filename='styles/journal.css')}}">
+
+ <link rel="stylesheet" href="{{url_for('static', filename='styles/home.css')}}">
+ <link rel="stylesheet" href="{{url_for('static', filename='styles/queries.css')}}">
+
+<!--BASE FILE FOR NON AUTHENTICATION ROUTES/PAGES -->
+
+  {% block title %}<title>base</title>{% endblock %}
+</head>
+
+<body>
+
+  <div class="container">
+
+    <nav class="navigation">
+      <div class="logo-section">
+        <img class="logo" src="../static/images/logo.png" alt="">
+        <h1>BraveraTech</h1>
+      </div>
+      
+      <ul>
+        <li><a class="btn btn-primary" href="{{url_for('views.home')}}">Home</a></li>
+        <li><a href="">About</a></li>
+        <li><a class="btn btn-primary" href="{{url_for('auth.logout')}}">Logout</a></li>
+      </ul>
+      <button class="menu-toggle">☰</button>
+    </nav>
+    
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+    {% if category == 'error' %}
+    <div class="error-message flashed-message">
+      <h3 class="message">{{message}}</h3>
+      <span class="close-button" aria-hidden="true">&times;</span>
+    </div>
+    {% else %}
+    <div class="success-message flashed-message">
+      <h3 class="message">{{message}}</h3>
+      <span class="close-button" aria-hidden="true">&times;</span>
+    </div>
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    <main class="content-section">
+
+      {% block content %}
+
+      {% endblock %}
+
+    </main>
+    
+    <footer class="footer">
+      <p>Join BraveraTech community using the links below</p>
+      <ul class="social-links">
+        <li>
+          <a href="https://www.facebook.com/brian.chacha.96592" target="_blank">
+            <img src="{{ url_for('static', filename='Images/Icons/facebook-icon.svg') }}" alt="Facebook icon">
+          </a>
+        </li>
+        <li>
+          <a href="https://wa.me/254792112127" target="_blank">
+            <img src="{{ url_for('static', filename='Images/Icons/whatsapp-icon.svg') }}" alt="WhatsApp icon">
+          </a>
+        </li>
+        <li>
+          <a href="https://youtube.com" target="_blank">
+            <img src="{{ url_for('static', filename='Images/Icons/youtube-icon.svg') }}" alt="YouTube icon">
+          </a>
+        </li>
+        <li>
+          <a href="https://tiktok.com" target="_blank">
+            <img src="{{ url_for('static', filename='Images/Icons/tiktok-icon.svg') }}" alt="TikTok icon">
+          </a>
+        </li>
+      </ul>
+      <p>Designed and maintained by BraveraTech</p>
+      <p>&copy; 2025 Your Journal App. All rights reserved.</p>
+    </footer>
+
+  </div>
+
+  
+
+</body>
+
+<script src="{{url_for('static', filename='scripts/script.js')}}"></script>
+
+</html>

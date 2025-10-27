@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}<title>Home</title>{% endblock %}
+
+
+{% block content %}
+
+<section class="home-section ">
+  <div>
+    <h1>Hello <span class="user-highlight">{{ current_user.username }}</span> ! <br> Nice to meet you.</h1>
+    <h2>A peaceful place to capture your ideas and memories.</h2>
+    <p>Manage your journals easily — all your notes in one spot.
+    </P>
+  </div>
+  
+  <div>
+    <img class="juornla-img" src="../static/images/hand-writing.jpg" alt="">
+    <p>Discover how easy it is to turn thoughts into progress.</p>
+  </div>
+
+</section>
+
+<div class="card">
+  <h2>Ready to begin? Let’s start writing!
+</h2>
+
+  <a class="btn btn-get-started" href="{{url_for('auth.journal')}}">Get Started</a>
+  
+</div>
+
+{% endblock %}

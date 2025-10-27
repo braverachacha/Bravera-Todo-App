@@ -1,0 +1,27 @@
+{% extends 'login-register-base.html' %}
+{% block title %}<title>login</title>{% endblock %}
+
+{% block content %}
+
+<form class="login-reg" method="post" action="">
+    <div class="login-welcome">
+        <h1>Welcome back to BraveraTech</h1>
+        <p>For any issue please feel free to reach me out using the links provided bellow</p>
+    </div>
+
+    <div class="input-section">
+        <h2>Login</h2>
+        <div>
+            <input type="email" id="email" name="email" required placeholder="email">
+        </div>
+        <div>
+            <input type="password" id="password" name="password" required placeholder="password">
+        </div>
+        <p>Don't have account? <a href="{{url_for('auth.register')}}">Create Account</a></p>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+        
+    </div>
+</form>
+{% endblock %}

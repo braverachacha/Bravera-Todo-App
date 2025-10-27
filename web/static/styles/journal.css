@@ -1,0 +1,142 @@
+.journal-intro{
+  margin: 10rem 0 3rem 0;
+}
+
+.journal-intro h1{
+  text-align: center;
+  font-size: 3.2rem;
+  color: var(--primary-color);
+}
+
+.journal{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.journal-section{
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  background-color: var(--card-bg);
+  border-radius: .9rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.journal-section input, textarea{
+  width: 100%;
+  border: none;
+  border-radius: 1rem;
+  padding: 1.5rem 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 2.6rem;
+  color: #693a61;
+  background-color: var(--background-color);
+  font-weight: 700;
+}
+
+.journal-section input:focus, textarea:focus{
+  outline: none;
+  border: none;
+}
+
+.journal-section textarea{
+  min-height: 30rem;
+}
+
+.journal-section label{
+  font-size: 2.4rem;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+}
+
+.submit-section{
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.submit-section button{
+  border: none;
+  padding: 1.7rem 1.5rem;
+  background-color: var(--success-color);
+  border-radius: .3rem;
+  font-size: 1.8rem;
+  width: 50%;
+  transition: ease .3s;
+}
+
+.submit-section button:hover{
+  background-color: var(--primary-color);
+}
+
+.journal-display{
+  padding: 2rem 1rem;
+  margin-bottom: 1rem;
+  box-shadow: var(--shadow);
+}
+
+.journal-display p{
+  font-size: 2rem;
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+
+.journal-display span{
+  color: var(--text-color);
+}
+
+.journal-display div{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem;
+}
+
+.journal-display button{
+  font-size: 1.8rem;
+  padding: 1rem 2rem;
+  border: none;
+  color: #fff;
+  transition: .3s ease;
+  border-radius: .8rem;
+}
+
+.journal-display button:hover{
+  opacity: 0.4;
+}
+
+.delete-button{
+  background-color: var(--error-color);
+}
+
+.update-button{
+  background-color: var(--accent-color);
+}
+
+/* Ai */
+
+.journal-display {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.journal-display:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.journal-display button:active {
+  transform: scale(0.96);
+}
+
+.journal-section input,
+.journal-section textarea {
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+.journal-section input:focus,
+.journal-section textarea:focus {
+  box-shadow: 0 0 10px rgba(105, 58, 97, 0.2);
+}

@@ -1,0 +1,86 @@
+@media(max-width: 75rem){
+  html{
+    font-size: var(--root-font);
+  }
+}
+
+@media (max-width: 50rem) {
+  html {
+    font-size: var(--root-font-md);
+  }
+
+  /* ==========================
+     Navigation (Responsive Menu)
+  ========================== */
+  .navigation {
+    position: relative;
+  }
+
+  .navigation ul {
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: orange;
+    height: 92vh;
+    width: 50%;
+    margin: 0;
+    padding: 2rem 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+
+    /* Animation setup */
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.3s ease;
+  }
+
+  .navigation ul.active {
+    max-height: 100vh;
+    opacity: 1;
+  }
+
+  .navigation li {
+    padding: 1rem 0.5rem;
+  }
+
+  .menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    font-size: 3rem;
+    cursor: pointer;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+    z-index: 1100;
+  }
+
+  /* ==========================
+     Other Responsive Elements
+  ========================== */
+  .login-reg {
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .login-reg > div {
+    min-height: auto;
+  }
+
+  .journal-intro {
+    margin-top: 10rem;
+  }
+
+  .home-section {
+    flex-direction: column;
+  }
+}
+
+@media(max-width: 31.25rem){
+  html{
+    font-size: var(--root-font-sm);
+  }
+}

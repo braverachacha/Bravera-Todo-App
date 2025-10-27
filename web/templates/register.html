@@ -1,0 +1,30 @@
+{% extends 'login-register-base.html' %}
+{% block title %}<title>Register</title>{% endblock %}
+
+{% block content %}
+
+<form class="login-reg" method="post" action="{{ url_for('auth.register') }}">
+    <div class="input-section">
+        <h2>Register</h2>
+        <div>
+            <input type="text" id="username" name="username" required placeholder="Username">
+        </div>
+        <div>
+            <input type="email" id="email" name="email" required placeholder="email">
+        </div>
+        <div>
+            <input type="password" id="password1" name="password1" required placeholder="password">
+        </div>
+        <div>
+            <input type="password" id="password2" name="password2" placeholder="Confirm password" required>
+        </div>
+        <div>
+          <p>Already have account?  <a href="{{url_for('auth.login')}}">Login</a></p>
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+
+    </div>
+</form>
+{% endblock %}

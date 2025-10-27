@@ -1,0 +1,17 @@
+:root {
+  --primary-color: #2a9d8f;
+  --secondary-color: #457b9d;
+  --accent-color: #e9c46a;
+  --text-color: #6fbfca;
+  --background-color: #f4f4f4;
+  --card-bg: #ffffff;
+  
+  --root-font: 62.5%;
+  --root-font-md: 56.25%;
+  --root-font-sm: 46.88%;
+  
+  --shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+  --success-color: #38a169;
+  --error-color: #e63946;
+} 

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}<title>notes</title>{% endblock %}
+
+
+{% block content %}
+
+<section class="journal-intro">
+  <h1>Write your journals in a few clicks.</h1>
+</section>
+
+{% for note in current_user.notes %}
+<section class="journal-display" id="note-{{ note.id }}">
+  <p><span>Title:</span> {{ note.title }}</p>
+  <p><span>Body:</span> {{ note.note }}</p>
+  <p><span>Date:</span> {{ note.date }}</p>
+  <div class="note-actions">
+    <button class="delete-button" onclick="deleteNote({{ note.id }})">
+      Delete
+    </button>
+    <button class="update-button">
+      Update
+    </button>
+  </div>
+</section>
+{% endfor %}
+
+<div class="journal">
+  <form action="" method="post">
+
+    <div class="journal-section">
+      <label for="title">Title</label>
+      <input class="journal-title" type="text" name="title" id="title" placeholder="Title your journal.">
+    </div>
+    
+    <div class="journal-section">
+      <label for="body">Body</label>
+      <textarea name="note" id="body" cols="100" rows="10" placeholder="Write your journal here..."></textarea>
+    </div>
+
+    <div class="submit-section">
+      <button type="submit" class="btn btn-journal">Add Journal</button>
+    </div>
+
+  </form>
+</div>
+  
+
+{% endblock %}

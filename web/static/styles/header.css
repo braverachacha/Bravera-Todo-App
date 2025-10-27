@@ -1,0 +1,44 @@
+.navigation{
+  background-color: var(--background-color);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  margin-bottom: 3rem;
+  position: relative;
+  right: 0;
+  left: 0;
+}
+
+.navigation h1{
+  font-size: 3.2rem;
+  color: var(--text-color);
+}
+
+.navigation ul{
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.navigation a{
+  font-size: 2.4rem;
+  text-decoration: none;
+  color: grey;
+  transition: ease .3s;
+}
+
+.navigation a:hover{
+  color: var(--accent-color);
+  transform: scale(1.2);
+}
+
+.logo-section{
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+.logo-section img{
+  width: 60px;
+}
