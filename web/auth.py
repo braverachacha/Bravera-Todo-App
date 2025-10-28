@@ -17,7 +17,7 @@ def login():
       flash('Logged in successfully!', category='success')
       return redirect(url_for('views.home'))
     else:
-      flash('Invalid username or password.', category='error')
+      flash('Invalid email or password.', category='error')
       return render_template('login.html')
       
   return render_template('login.html')
