@@ -15,10 +15,15 @@
   <p><span>Body:</span> {{ note.note }}</p>
   <p><span>Date:</span> {{ note.date }}</p>
   <div class="note-actions">
-    <button class="delete-button" onclick="deleteNote({{ note.id }})">
+    <button class="delete-button" onclick="
+    deleteNote({{ note.id }})
+    ">
       Delete
     </button>
-    <button class="update-button">
+    <button class="update-button" 
+    onclick="
+    updateNote({{ note.id }})
+    ">
       Update
     </button>
   </div>

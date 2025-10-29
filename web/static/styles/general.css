@@ -9,6 +9,10 @@ a, button{
   display: inline-block;
 }
 
+ul{
+  list-style: none;
+}
+
 html{
   font-size: var(--root-font);
 }
@@ -56,6 +60,7 @@ body{
   background: transparent;
   padding: .5rem;
   color: #fff;
+  cursor: pointer;
 }
 
 .menu-toggle{
@@ -101,4 +106,18 @@ footer img{
 
 footer img:hover{
   transform: scale(1.2);
+}
+
+
+/* Disable autofill background color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+  background: transparent !important;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+  -webkit-text-fill-color: var(--primary-color) !important;
+  transition: background-color 5000s ease-in-out 0s;
 }

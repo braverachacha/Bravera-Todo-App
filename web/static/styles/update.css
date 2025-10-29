@@ -1,0 +1,24 @@
+.update-section{
+  padding: 1.5rem 1rem;
+}
+
+.update-section div{
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: var(--background-color);
+  box-shadow: var(--shadow);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.update-section input, textarea{
+  box-shadow: var(--shadow);
+}
+
+.update-submit{
+  margin: 2rem auto;
+  padding: 1rem 1.5rem;
+  text-align: center;
+}

@@ -1,0 +1,49 @@
+
+.about-herosection {
+  padding: 2rem 1rem;
+  height: calc(100vh + 20rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  border-radius: .7rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: #fff;
+}
+
+.about-herosection h1{
+  font-size: 4.2rem;
+  color: var(--text-color);
+  margin: 2.5rem 1rem;
+  font-weight: 900;
+}
+
+.about-herosection p, .vision-section p{
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+  padding: 1rem 1rem;
+  line-height: 1.5;
+}
+
+.features-section, .vision-section{
+  padding: 2rem 1rem;
+}
+
+.features-section h2, .vision-section h2{
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
+  color: #49444b;
+}
+
+.features-section li{
+  margin-bottom: 2rem;
+  font-size: 2.4rem;
+  padding: .5rem 1rem;
+  border-left: 1rem solid aqua;
+}
+
+.features-section span{
+  display: inline-block;
+  font-size: 3.5rem;
+}

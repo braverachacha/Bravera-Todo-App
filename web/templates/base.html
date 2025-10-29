@@ -15,6 +15,8 @@
   <!-- LINKS TO CSS FILES -->
   
  <link rel="stylesheet" href="{{url_for('static', filename='styles/variables.css')}}">
+ <link rel="stylesheet" href="{{url_for('static', filename='styles/update.css')}}">
+ <link rel="stylesheet" href="{{url_for('static', filename='styles/about.css')}}">
  <link rel="stylesheet" href="{{url_for('static', filename='styles/general.css')}}">
  <link rel="stylesheet" href="{{url_for('static', filename='styles/header.css')}}">
   <link rel="stylesheet" href="{{url_for('static', filename='styles/journal.css')}}">
@@ -28,7 +30,7 @@
 </head>
 
 <body>
-
+  
   <div class="container">
 
     <nav class="navigation">
@@ -39,7 +41,7 @@
       
       <ul>
         <li><a class="btn btn-primary" href="{{url_for('views.home')}}">Home</a></li>
-        <li><a href="">About</a></li>
+        <li><a href="{{url_for('views.about')}}">About</a></li>
         <li><a class="btn btn-primary" href="{{url_for('auth.logout')}}">Logout</a></li>
       </ul>
       <button class="menu-toggle">☰</button>
@@ -101,10 +103,6 @@
 
   </div>
 
-  
-
-</body>
-
 <script src="{{url_for('static', filename='scripts/script.js')}}"></script>
-
+</body>
 </html>

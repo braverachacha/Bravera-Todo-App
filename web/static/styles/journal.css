@@ -2,7 +2,7 @@
   margin: 10rem 0 3rem 0;
 }
 
-.journal-intro h1{
+.journal-intro h1, .update-intro{
   text-align: center;
   font-size: 3.2rem;
   color: var(--primary-color);
@@ -28,7 +28,7 @@
   flex-direction: column;
 }
 
-.journal-section input, textarea{
+.journal-section input, textarea, .inputs{
   width: 100%;
   border: none;
   border-radius: 1rem;
@@ -40,16 +40,16 @@
   font-weight: 700;
 }
 
-.journal-section input:focus, textarea:focus{
+.journal-section input:focus, textarea:focus, .inputs:focus{
   outline: none;
   border: none;
 }
 
-.journal-section textarea{
+.journal-section textarea, .update-textaera{
   min-height: 30rem;
 }
 
-.journal-section label{
+.journal-section label, .update-label{
   font-size: 2.4rem;
   margin-bottom: 1.5rem;
   display: inline-block;
@@ -60,17 +60,19 @@
   margin: 2rem 0;
 }
 
-.submit-section button{
+.submit-section button, .update{
   border: none;
   padding: 1.7rem 1.5rem;
   background-color: var(--success-color);
   border-radius: .3rem;
-  font-size: 1.8rem;
+  font-size: 2rem;
   width: 50%;
   transition: ease .3s;
+  color: #fff;
 }
 
-.submit-section button:hover{
+
+.submit-section button:hover, .update:hover{
   background-color: var(--primary-color);
 }
 

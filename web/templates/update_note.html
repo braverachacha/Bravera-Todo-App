@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}<title>Update Note</title>{% endblock %}
+
+{% block content %}
+<h2 class="update-intro">Edit Your Journal</h2>
+
+<form class="update-section" method="POST">
+  <div>
+    <label class="update-label" for="title">Title</label>
+    <input class="inputs" type="text" id="title" name="title" value="{{ note.title }}">
+  </div>
+
+  <div>
+    <label class="update-label" for="note">Body</label>
+    <textarea class="inputs update-textaera" id="note" name="note">{{ note.note }}</textarea>
+  </div>
+  
+  <section class="update-submit">
+    <button class="update" type="submit">Update</button>
+  </sectiono>
+  
+</form>
+{% endblock %}

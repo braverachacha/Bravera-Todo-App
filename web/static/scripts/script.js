@@ -19,6 +19,11 @@ function deleteNote(noteId) {
   });
 }
 
+// note update 
+
+function updateNote(noteId){
+  window.location.href=`/update/${noteId}`;
+}
 
 // nav bar toggle
 

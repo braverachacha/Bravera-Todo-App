@@ -91,7 +91,7 @@ def logout():
 
 @auth.route('/delete-note', methods=['POST'])
 def delete_note():  
-    note = json.loads(request.data) # this function expects a JSON from the INDEX.js file 
+    note = json.loads(request.data) # this function expects a JSON from the script.js file 
     noteId = note['noteId']
     note = Note.query.get(noteId)
     if note:
@@ -100,3 +100,18 @@ def delete_note():
             db.session.commit()
 
     return jsonify({})
+
+@auth.route('/update/<int:id>', methods=['GET', 'POST'])
+@login_required
+def update(id):
+    note = Note.query.get_or_404(id)
+
+    if request.method == 'POST':
+        note.title = request.form['title']
+        note.note = request.form['note']
+        db.session.commit()
+        flash('Updated successfully!', category='success')
+        return redirect(url_for('auth.journal'))
+
+    return render_template('update_note.html', note=note)
+  

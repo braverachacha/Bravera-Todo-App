@@ -15,7 +15,9 @@
   .navigation {
     position: relative;
   }
-
+  .container{
+    width: 100vw;
+  }
   .navigation ul {
     flex-direction: column;
     position: absolute;
@@ -76,6 +78,9 @@
 
   .home-section {
     flex-direction: column;
+  }
+  .about-herosection{
+    height: 75vh;
   }
 }
 
