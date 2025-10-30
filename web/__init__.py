@@ -1,13 +1,16 @@
 from flask import Flask
 from flask_login import LoginManager
 from web.models import db, User
+import os
 
 def create_app():
     app = Flask(__name__)
-    app.config['SECRET_KEY'] = 'chacha bomsjdj jdo bravera254'
+    app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'chacha-default-key')
 
-    # Use in-memory SQLite (no external DB needed)
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///:memory:'
+    database_url = os.getenv('DATABASE_URL', 'sqlite:///database.db')
+    if database_url.startswith("postgres://"):
+        database_url = database_url.replace("postgres://", "postgresql://")
+    app.config['SQLALCHEMY_DATABASE_URI'] = database_url
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
     db.init_app(app)
@@ -24,9 +27,5 @@ def create_app():
     @login_manager.user_loader
     def load_user(id):
         return User.query.get(int(id))
-
-    # Create tables on app start (in-memory)
-    with app.app_context():
-        db.create_all()
 
     return app

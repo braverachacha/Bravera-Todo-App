@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: bravera-todo-app
+    env: python
+    region: oregon
+    plan: free
+    branch: main
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: neondb
+          property: connectionString
+      - key: SECRET_KEY
+        value: "chacha bomsjdj jdo bravera254"
+
+databases:
+  - name: neondb
+    engine: postgresql
+    version: 15
+    plan: free
